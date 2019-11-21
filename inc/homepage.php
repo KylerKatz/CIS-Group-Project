@@ -10,38 +10,14 @@ session_start();
   <link href="https://fonts.googleapis.com/css?family=EB+Garamond&display=swap" rel="stylesheet"> 
   <link rel="stylesheet" href="https://cdn.metroui.org.ua/v4.3.2/css/metro-all.min.css">
 
-  <title>Teache's Page1</title>
+  <title>Open University Learning Analytics| Group 4 Project</title>
   
-    <style>
-  /* Remove the navbar's default margin-bottom and rounded borders */
-    .navbar {
-      margin-bottom: 0;
-      border-radius: 0;
-    }
-    p {
-    font-size: 20px;
-    font-family: 'Poiret One', cursive;
-    }
-    h1 {font-family: 'Oswald', sans-serif;
-    font-family: 'Indie Flower', cursive; 
-     }
-    h3 {font-size; 25px;
-      font-family: 'Poiret One', cursive; } 
-    /* Add a gray background color and some padding to the footer */
-    footer {
-      background-color: #f2f2f2;
-      padding: 25px;
-    }
-  
-  
-  </style>
+  <?php  
+include("header.php");
+?>
 </head>
 
-<div class="jumbotron">
-  <div class="container text-center">
-    <h1 style="color: Black" class="font-family">Teacher 1</h1>
-  </div>
-</div>
+
 <body>
 <div class="tiles-grid ml-10" align="center">
     <div data-role="tile" data-size="large" style="background-color: #4a00b3">
