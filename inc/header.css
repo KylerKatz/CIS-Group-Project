@@ -1,0 +1,56 @@
+.header{
+width: 100%;
+height: 100px;
+display: block;
+background-color:#333333;
+
+}
+
+.inner-header{
+    width: 1400px;
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+    /* background-color: red; */
+}
+
+.logo{
+    height:100%;
+    display: table;
+    float: left;
+
+}
+.logo h1 {
+   height: 100%;
+   color: white;
+   display: table-cell;
+   vertical-align: middle;
+   font-family: Ubuntu;
+   font-size: 50px;
+}
+.navigation{
+    float: right;
+    height: 100%;
+}
+.navigation a{
+    height:100%;
+    display: table;
+    float: left;
+    vertical-align: middle;
+    padding: 40px 15px;
+}
+.navigation a li{
+    display: table-cell;
+    vertical-align: middle;
+    height: 100%;
+    color: white;
+    font-family: 'Ubuntu';
+    font-size: 25px;
+}
+.navigation a:last-child{
+    padding-right: 0;
+}
+.navigation a:hover {
+    color: white;
+  }
+

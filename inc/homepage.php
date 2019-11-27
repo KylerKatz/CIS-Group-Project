@@ -2,50 +2,49 @@
 session_start();
 ?>
 <!DOCTYPE html>
-<html lang="en">
 <head>
-<meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link href="https://fonts.googleapis.com/css?family=EB+Garamond&display=swap" rel="stylesheet"> 
-  <link rel="stylesheet" href="https://cdn.metroui.org.ua/v4.3.2/css/metro-all.min.css">
-
-  <title>Open University Learning Analytics| Group 4 Project</title>
+  <title>Open University Learning Trends</title>
   
   <?php  
 include("header.php");
 ?>
+<link rel="stylesheet" type="text/css" href="style.css"> 
+
 </head>
 
 
-<body>
-<div class="tiles-grid ml-10" align="center">
-    <div data-role="tile" data-size="large" style="background-color: #4a00b3">
-      <span class="branding-bar"> Gender </span>
-    </div>
-    <div  data-role="tile" data-size="large"  style="background-color: #4a00b3">
-    <span class="branding-bar"> Year </span>
-    </div>
-    <div  data-role="tile" data-size="large"  style="background-color: #4a00b3">
-    <span class="branding-bar"> Education Background </span>
-    </div></div>
-    <br>
-</div>
-<div class="tiles-grid  ml-10" align="center" >
-    <div data-role="tile" data-size="large"  style="background-color: #4a00b3">
-    <span class="branding-bar"> Learning Disability </span>
-    </div>
-    <div data-role="tile" data-size="large"  style="background-color: #4a00b3">
-    <span class="branding-bar"> My students </span>
-    </div>
-    <div data-role="tile" data-size="large"  style="background-color: #4a00b3">
-    <span class="branding-bar"> Age </span>
-    </div>
+<body >
+<div id="welcome-text-block">
+      <p id = "left-text"> Hello and welcome to the Open University Learning Trends website! 
+        The purpose of this website is to offer teachers and faculty Insight into how metrics such as age, class demographics, and course interactions can affect student learning outcomes. 
+        The data that these trends are based off is from the <a href = "https://analyse.kmi.open.ac.uk/open_dataset" target = "_blank" > Open University Learning Analytics dataset</a> which is data from an online school for student in the United Kingdom. 
+        This is anonymized data from over thirty-thousand students across two years and four semesters. 
+        We hope that you are able to take away newfound information that can be applied to your future teaching.     </p>
   </div>
-  <br><br>
-  <footer class="container-fluid text-center">
-    </footer>
-  <script src="https://cdn.metroui.org.ua/v4/js/metro.min.js"></script>
 
+  
+<!-- <div class = "slider-container">
+    <div class = "image-container">
+      <img src = "../images/1.jpg" class = "slider-image">
+      <img src = "../images/2.jpg" class = "slider-image">
+      <img src = "../images/3.jpg" class = "slider-image">
+    </div>
+
+</div> -->
+
+  
+
+
+
+  
 </body>
+
+<footer>
+  <?php
+  
+  include("footer.php")
+  ?>
+</footer>
+
+
 </html>

@@ -7,4 +7,11 @@ include("header.php")
 </head>
 
 
+<footer>
+  <?php
+  
+  include("footer.php")
+  ?>
+</footer>
+
 </html>

@@ -1,35 +1,64 @@
-body{
-    background: #eee;
-}
-#frm{
-    border: solid gray 1px;
-    width: 20%;
-    border-radius:  10px;
-    margin: 100px auto;
-    background: white;
-}
-#sbm{
-    color: #fff;
-    background: #337ab7;
-    padding: 5px;
-    margin-left: 80%;
-}
 
 body{
-    display: inline-block;
+    background-color: grey;
 }
 
-.navbar {
-    margin-bottom: 0;
-    border-radius: 0;
+#welcome-text-block{
+    margin-top: 100px;
+    width: 40%;
+    height: 100%;
+    display: block;
+    position: left;
+    white-space: normal;
+    padding: 50px;
+    
 }
 
-p {
-    font-size: 20px;
-    font-family: 'Poiret One', cursive;
+ #left-text{
+   
+    font-family: 'Ubuntu';
+    font-size: 25px;
+    color: black;
+    vertical-align: middle;
+    margin-left: 20px;
+   
+      
+}
+a{
+    color: white;
 }
 
+footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #333333;
+    color: white;
+}
 
-  
+/* .slider-container{
+    width:800px;
+    height:600px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    text-align: center;
+}
 
-  
+.image-container{
+    width: 2400px;
+    height: 600px;
+    position: relative;
+    transition: left 2s;
+    -webkit-transition: left 2s;
+    -moz-transition: left 2s;
+    -o-transition: left 2s;
+}
+
+.slider-image{
+    float: left;
+    margin: 0px;
+    padding: 0px;
+} */
