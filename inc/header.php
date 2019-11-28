@@ -8,20 +8,10 @@
 <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   
-
-  <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
-  <!-- <link href="https://fonts.googleapis.com/css?family=EB+Garamond&display=swap" rel="stylesheet"> 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdn.metroui.org.ua/v4.3.2/css/metro-all.min.css">
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
-  <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-   -->
-
-  
 <div class = "header">
   <div class = "inner-header">
       <div class = "logo">
-          <h1> <span>Open</span> <span style = "color:#34c4f4; font-family: Ubuntu;">University</span> Learning Trends </h1>
+          <h1> <span>Open</span> <span style = "color:#34c4f4; font-family: Ubuntu; margin:0;">University</span> Learning Trends </h1>
       </div>
       
       <div class = "navigation">

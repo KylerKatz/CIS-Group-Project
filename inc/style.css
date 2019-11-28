@@ -1,34 +1,61 @@
 
+html{
+    margin:0;
+    padding:0;
+}
 body{
     background-color: grey;
-}
+    margin: 0;
+    padding: 0;
+    width: 100%;
+} 
 
-#welcome-text-block{
+ #welcome-text-block{
+    margin:0;
+    margin-left: 100px;
     margin-top: 100px;
-    width: 40%;
+    margin-right: 0px;
+    width: 30%;
     height: 100%;
-    display: block;
+    display: inline-block; 
     position: left;
     white-space: normal;
-    padding: 50px;
-    
+    padding: 0px;
+    border: none;
+    background-color: red;
+ 
+} 
+#Graph-text-left{
+    margin:0;
+    margin-left: 100px;
+    /* margin-top: 100px; */
+    margin-right: 0px;
+    width: 30%;
+    height: 100%;
+    display: inline-block; 
+    position: left;
+    white-space: normal;
+    padding: 0px;
+    border: none;
+    background-color: red;
 }
 
  #left-text{
-   
+   width: 100%;
     font-family: 'Ubuntu';
     font-size: 25px;
     color: black;
-    vertical-align: middle;
-    margin-left: 20px;
-   
+    /* vertical-align: middle; */
+    border: none;
+    margin: 0;
       
-}
+} 
 a{
     color: white;
 }
 
-footer{
+
+ footer{
     position: fixed;
     left: 0;
     bottom: 0;
@@ -36,7 +63,46 @@ footer{
     height: 50px;
     background-color: #333333;
     color: white;
+
 }
+.footer-text{
+    height: 100%;
+    vertical-align: middle;
+    padding: 10px;
+}
+#chart-container{
+    display: inline-block;
+    width: 45%;
+    margin-left: 200px;
+    margin-top: 125px;
+    background-color: black;
+}
+
+canvas{
+    margin-top: 50px;
+    width:100% !important;
+    height:100% !important;
+  
+  }
+
+
+.Graph-Block{
+    display: inline-block; 
+    margin-top: 100px;
+    width: 40%;
+    height: 20%;
+    position: right;
+    white-space: normal;
+    margin-left: 50px;
+    padding: 0;
+    margin-block: 0;
+    
+}
+.GraphAlign{
+   padding:0;
+   
+} 
+
 
 /* .slider-container{
     width:800px;

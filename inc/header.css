@@ -11,7 +11,6 @@ background-color:#333333;
     height: 100%;
     display: block;
     margin: 0 auto;
-    /* background-color: red; */
 }
 
 .logo{
@@ -25,8 +24,9 @@ background-color:#333333;
    color: white;
    display: table-cell;
    vertical-align: middle;
-   font-family: Ubuntu;
+   font-family: Ubuntu; 
    font-size: 50px;
+   margin: 0;
 }
 .navigation{
     float: right;
@@ -54,3 +54,4 @@ background-color:#333333;
     color: white;
   }
 
+ 

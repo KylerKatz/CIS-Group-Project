@@ -3,14 +3,15 @@ session_start();
 ?>
 <!DOCTYPE html>
 <head>
-  <title>Open University Learning Trends</title>
-  
-  <?php  
+<title>Open University Learning Trends</title>
+<link rel="stylesheet" type="text/css" href="style.css"> 
+</head>
+
+<header>
+<?php  
 include("header.php");
 ?>
-<link rel="stylesheet" type="text/css" href="style.css"> 
-
-</head>
+</header>
 
 
 <body >
