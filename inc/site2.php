@@ -18,24 +18,57 @@ BODY {
 
 </head>
 <body>
+
+
+
 <div id="chart-container">
      <canvas id="graphCanvas"></canvas>
+	 <button id="button1" name="action">Data1</button>
+<button id="button2" name="action">Data2</button>
+
     </div>
     <script>
         $(document).ready(function () {
-            showGraph();
+				
+				var val = "";				
+
+            	$('#button1').on('click',function(){
+					var val = "1";
+ 				 showGraph(val);				
+					
+				});
+				$('#button2').on('click',function(){
+					var val = "2";
+ 				 showGraph(val);				
+					
+				});
+			
+
+		
         });
 
 
-        function showGraph()
+        function showGraph(val)
         {
-            
-                $.post("index2.php",
+				
+                $.get("index2.php",
                 function (data)
-                {
-                    console.log(data);
+                {   
+				console.log(val);
 
-                    var one = [];
+					if(val == "1")
+					{
+						var data1=data['data1'];
+					}
+					if(val == "2")
+					{
+					    var data1=data['data2'];
+					}
+					                    
+					
+					console.log(data1);
+
+					var one = [];
                     var two = [];
                     var three =[];
                     var four = [];
@@ -50,19 +83,19 @@ BODY {
 
 
                     //Use uppercase for the retriving data names
-                    for (var i in data) {
-                        one.push(data[i].P1);
-                        two.push(data[i].W1);
-                        three.push(data[i].D1);
-                        four.push(data[i].F1);
-                        one1.push(data[i].P2);
-                        two1.push(data[i].W2);
-                        three1.push(data[i].D2);
-                        four1.push(data[i].F2);
-                        one2.push(data[i].P3);
-                        two2.push(data[i].W3);
-                        three2.push(data[i].D3);
-                        four2.push(data[i].F3);
+                    for (var i in data1) {
+                        one.push(data1[i].P1);
+                        two.push(data1[i].W1);
+                        three.push(data1[i].D1);
+                        four.push(data1[i].F1);
+                        one1.push(data1[i].P2);
+                        two1.push(data1[i].W2);
+                        three1.push(data1[i].D2);
+                        four1.push(data1[i].F2);
+                        one2.push(data1[i].P3);
+                        two2.push(data1[i].W3);
+                        three2.push(data1[i].D3);
+                        four2.push(data1[i].F3);
                     }
 
                     var chartdata = {
@@ -125,9 +158,10 @@ BODY {
                         type: 'bar',
                         data: chartdata
                     })
-                })
-                
-                
+			
+          });
+	   
+
             };
         </script>
 
