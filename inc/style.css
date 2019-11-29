@@ -23,6 +23,7 @@ body{
     padding: 0px;
     border: none;
     background-color: red;
+    max-width: 100%;
  
 } 
 #Graph-text-left{
@@ -38,6 +39,8 @@ body{
     padding: 0px;
     border: none;
     background-color: red;
+    max-width: 100%;
+
 }
 
  #left-text{
@@ -75,7 +78,8 @@ a{
     width: 45%;
     margin-left: 200px;
     margin-top: 125px;
-    background-color: black;
+    /* background-color: black; */
+    box-shadow: 2px 0px 9px 3px #000000;
 }
 
 canvas{
@@ -102,6 +106,14 @@ canvas{
    padding:0;
    
 } 
+
+@media (max-width: 760px){
+    .body, #Graph-text-left{
+        
+        width: 100%;
+    }
+}
+
 
 
 /* .slider-container{

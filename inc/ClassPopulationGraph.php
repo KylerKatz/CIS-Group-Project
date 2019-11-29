@@ -36,22 +36,22 @@ BODY {
 
                     var AAA = [];
                     var BBB = [];
-                    // var CCC = [];
-                    // var DDD = [];
-                    // var EEE = [];
-                    // var FFF = [];
-                    // var GGG = [];
+                    var CCC = [];
+                    var DDD = [];
+                    var EEE = [];
+                    var FFF = [];
+                    var GGG = [];
 
 
                     //Use uppercase for the retriving data names
                     for (var i in data) {
-                        AAA.push(data[i].INT1);
-                        BBB.push(data[i].INT2);
-                        // CCC.push(data[i].INT3);
-                        // DDD.push(data[i].INT4);
-                        // EEE.push(data[i].INT5);
-                        // FFF.push(data[i].INT6);
-                        // GGG.push(data[i].INT7);
+                        AAA.push(data[i].C1);
+                        BBB.push(data[i].C2);
+                        CCC.push(data[i].C3);
+                        DDD.push(data[i].C4);
+                        EEE.push(data[i].C5);
+                        FFF.push(data[i].C6);
+                        GGG.push(data[i].C7);
 
                     }
 
@@ -59,18 +59,18 @@ BODY {
                         labels: [
                         "Female to Male class AAA population", 
                         "Female to Male class BBB population", 
-                        // "Female to Male class CCC population", 
-                        // "Female to Male class DDD population", 
-                        // "Female to Male class EEE population",
-                        // "Female to Male class FFF population",
-                        // "Female to Male class GGG population"
+                        "Female to Male class CCC population", 
+                        "Female to Male class DDD population", 
+                        "Female to Male class EEE population",
+                        "Female to Male class FFF population",
+                        "Female to Male class GGG population"
                     ],      
 
                         datasets: [
                             {
                                 hoverBackgroundColor: '#CCCCCC',
                                 hoverBorderColor: '#666666',
-                                data: [(AAA ), (BBB)],
+                                data: [(AAA ), (BBB), (CCC), (DDD), (EEE), (FFF), (GGG)],
                                 backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
 
                             }
