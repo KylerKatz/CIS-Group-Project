@@ -22,11 +22,18 @@ BODY {
 
 
 <div id="chart-container">
-     <canvas id="graphCanvas"></canvas>
-	 <button id="button1" name="action">Data1</button>
-<button id="button2" name="action">Data2</button>
-
-    </div>
+		<canvas id="graphCanvas"></canvas>
+		<button id="button1" name="action">0</button>
+		<button id="button2" name="action">1</button>
+		<button id="button3" name="action">2</button>
+		<button id="button4" name="action">3</button>
+		<button id="button5" name="action">4</button>
+		<button id="button6" name="action">5</button>
+		<button id="button7" name="action">6</button>
+		<button id="button8" name="action">7</button>
+		<button id="button9" name="action">8</button>
+		<button id="button10" name="action">9</button>
+ </div>
     <script>
         $(document).ready(function () {
 				
@@ -34,17 +41,44 @@ BODY {
 
             	$('#button1').on('click',function(){
 					var val = "1";
- 				 showGraph(val);				
-					
+ 				 showGraph(val);									
 				});
 				$('#button2').on('click',function(){
 					var val = "2";
+ 				 showGraph(val);									
+				});	
+				$('#button3').on('click',function(){
+					var val = "3";
  				 showGraph(val);				
-					
 				});
-			
-
-		
+				$('#button4').on('click',function(){
+					var val = "4";
+ 				 showGraph(val);								
+				});	
+				$('#button5').on('click',function(){
+					var val = "5";
+ 				 showGraph(val);								
+				});	
+				$('#button6').on('click',function(){
+					var val = "6";
+ 				 showGraph(val);								
+				});	
+				$('#button7').on('click',function(){
+					var val = "7";
+ 				 showGraph(val);								
+				});
+				$('#button8').on('click',function(){
+					var val = "8";
+ 				 showGraph(val);								
+				});	
+				$('#button9').on('click',function(){
+					var val = "9";
+ 				 showGraph(val);								
+				});	
+				$('#button10').on('click',function(){
+					var val = "10";
+ 				 showGraph(val);								
+				});					
         });
 
 
@@ -64,7 +98,38 @@ BODY {
 					{
 					    var data1=data['data2'];
 					}
-					                    
+					if(val == "3")
+					{
+					    var data1=data['data3'];
+					}
+					if(val == "4")
+					{
+					    var data1=data['data4'];
+					}
+					if(val == "5")
+					{
+					    var data1=data['data5'];
+					}
+					if(val == "6")
+					{
+					    var data1=data['data6'];
+					}
+					if(val == "7")
+					{
+					    var data1=data['data7'];
+					}
+					if(val == "8")
+					{
+					    var data1=data['data8'];
+					}
+					if(val == "9")
+					{
+					    var data1=data['data9'];
+					} 
+					if(val == "10")
+					{
+					    var data1=data['data10'];
+					} 					
 					
 					console.log(data1);
 
@@ -155,7 +220,7 @@ BODY {
                     var graphTarget = $("#graphCanvas");
 
                     var barGraph = new Chart(graphTarget, {
-                        type: 'bar',
+                        type: 'horizontalBar',
                         data: chartdata
                     })
 			
