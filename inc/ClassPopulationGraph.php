@@ -34,54 +34,79 @@ BODY {
                 {
                     console.log(data);
 
-                    var AAA = [];
-                    var BBB = [];
-                    var CCC = [];
-                    var DDD = [];
-                    var EEE = [];
-                    var FFF = [];
-                    var GGG = [];
+                    var AAAF = [];
+                    var AAAM = [];
+                    var BBBF = [];
+                    var BBBM = [];
+                    var CCCF = [];
+                    var CCCM = [];
+                    var DDDF = [];
+                    var DDDM = [];
+                    var EEEF = [];
+                    var EEEM = [];
+                    var FFFF = [];
+                    var FFFM = [];
+                    var GGGF = [];
+                    var GGGM = [];
 
 
                     //Use uppercase for the retriving data names
                     for (var i in data) {
-                        AAA.push(data[i].C1);
-                        BBB.push(data[i].C2);
-                        CCC.push(data[i].C3);
-                        DDD.push(data[i].C4);
-                        EEE.push(data[i].C5);
-                        FFF.push(data[i].C6);
-                        GGG.push(data[i].C7);
+                        AAAF.push(data[i].FTOTAL_1);
+                        AAAM.push(data[i].MTOTAL_1);
+                        BBBF.push(data[i].FTOTAL_2);
+                        BBBM.push(data[i].MTOTAL_2);
+                        CCCF.push(data[i].FTOTAL_3);
+                        CCCM.push(data[i].MTOTAL_3);
+                        DDDF.push(data[i].FTOTAL_4);
+                        DDDM.push(data[i].MTOTAL_4);
+                        EEEF.push(data[i].FTOTAL_5);
+                        EEEM.push(data[i].MTOTAL_5);
+                        FFFF.push(data[i].FTOTAL_6);
+                        FFFM.push(data[i].MTOTAL_6);
+                        GGGM.push(data[i].MTOTAL_7);
+                        GGGF.push(data[i].FTOTAL_7);
+                    
+
+                        
 
                     }
 
                     var chartdata = {
-                        labels: [
-                        "Female to Male class AAA population", 
-                        "Female to Male class BBB population", 
-                        "Female to Male class CCC population", 
-                        "Female to Male class DDD population", 
-                        "Female to Male class EEE population",
-                        "Female to Male class FFF population",
-                        "Female to Male class GGG population"
-                    ],      
+                        labels: ["AAA", "BBB", "CCC", "DDD", "EEE", "FFF", "GGG"],      
 
                         datasets: [
                             {
+                                label: "Female",
                                 hoverBackgroundColor: '#CCCCCC',
                                 hoverBorderColor: '#666666',
-                                data: [(AAA ), (BBB), (CCC), (DDD), (EEE), (FFF), (GGG)],
-                                backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+                                data: [AAAF, BBBF, CCCF, DDDF, EEEF, FFFF, GGGF],
+                                backgroundColor: ["HotPink","HotPink","HotPink","HotPink","HotPink","HotPink","HotPink",],
+                            },
 
-                            }
+                            {
+                                label: "Male",
+                                hoverBackgroundColor: '#CCCCCC',
+                                hoverBorderColor: '#666666',
+                                data: [AAAM, BBBM, CCCM, DDDM, EEEM, FFFM, GGGM],
+                                backgroundColor: ["#0a51f2","#0a51f2","#0a51f2","#0a51f2","#0a51f2","#0a51f2","#0a51f2"],
+
+                            },
+
                         ]
                     };
+
+
+
+
+                    
 
                     var graphTarget = $("#graphCanvas");
 
                     var barGraph = new Chart(graphTarget, {
-                        type: 'doughnut',
-                        data: chartdata
+                        type: 'bar',
+                        data: chartdata,
+                        
                     });
                 });
             }
