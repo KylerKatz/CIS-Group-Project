@@ -19,7 +19,7 @@
         <ul>
 
           <a href="age.php">
-            <li>Age </li>
+            <li>IMD </li>
           </a>
           <a href="interactions.php">
             <li> Course Interactions</li>

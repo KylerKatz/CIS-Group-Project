@@ -1,227 +1,245 @@
+
 <!DOCTYPE html>
 <html>
-
 <head>
-	<meta charset="utf-8" />
-	<style type="text/css">
-		BODY {
-			width: 550PX;
-		}
+<meta charset="utf-8"/>
+<style type="text/css">
+BODY {
+    width: 550PX;
+}
 
-		#chart-container {
-			width: 100%;
-			height: auto;
-		}
-	</style>
-	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-	<script type="text/javascript" src="js/jquery.min.js"></script>
-	<script type="text/javascript" src="js/Chart.min.js"></script>
+#chart-container {
+    width: 100%;
+    height: auto;
+}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/Chart.min.js"></script>
+<script type="text/javascript" src="js/Chart.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+
+
 
 </head>
-
 <body>
 
 
 
-	<div id="chart-container">
+<div id="chart-container" style = "background-color: white;">
 		<canvas id="graphCanvas"></canvas>
-		<button id="button1" name="action">0</button>
-		<button id="button2" name="action">1</button>
-		<button id="button3" name="action">2</button>
-		<button id="button4" name="action">3</button>
-		<button id="button5" name="action">4</button>
-		<button id="button6" name="action">5</button>
-		<button id="button7" name="action">6</button>
-		<button id="button8" name="action">7</button>
-		<button id="button9" name="action">8</button>
-		<button id="button10" name="action">9</button>
-	</div>
-	<script>
-		$(document).ready(function() {
+		
+		<form  id="userform" >
+		<input type = "text" id= "sem" placeholder = "Semester" required/>
+		<button type='submit' id="submit" value='Submit' >Submit</button>
 
-			var val = "";
+		</form>
+		
+ </div>
+ <div id='response'></div>
 
-			$('#button1').on('click', function() {
-				var val = "1";
-				showGraph(val);
+    <script>
+		
+	   var id = "";
+	   $(document).ready(function () {	
+
+		$('#submit').click( function(event) {
+			event.preventDefault();
+			
+			var sem = $('#sem').val();
+
+			$.ajax({
+            type : 'POST',  //type of method
+			url: 'index2.php',
+			dataType: 'json',
+			data: {sem: sem},
+			success: function(data){
+				if(data.code =='200'){
+				//alert('Success: ' + data.msg)
+				sem = data.msg;
+				
+				}
+				console.log(sem);
+				showGraph(sem);
+
+			},
+			
 			});
-			$('#button2').on('click', function() {
-				var val = "2";
-				showGraph(val);
-			});
-			$('#button3').on('click', function() {
-				var val = "3";
-				showGraph(val);
-			});
-			$('#button4').on('click', function() {
-				var val = "4";
-				showGraph(val);
-			});
-			$('#button5').on('click', function() {
-				var val = "5";
-				showGraph(val);
-			});
-			$('#button6').on('click', function() {
-				var val = "6";
-				showGraph(val);
-			});
-			$('#button7').on('click', function() {
-				var val = "7";
-				showGraph(val);
-			});
-			$('#button8').on('click', function() {
-				var val = "8";
-				showGraph(val);
-			});
-			$('#button9').on('click', function() {
-				var val = "9";
-				showGraph(val);
-			});
-			$('#button10').on('click', function() {
-				var val = "10";
-				showGraph(val);
-			});
-		});
+
+		});	  
+
+		
+        });
 
 
-		function showGraph(val) {
+        function showGraph(sem)
+        {
+				
+               
+			    	var data1=sem;
 
-			$.get("index2.php",
-				function(data) {
-					console.log(val);
+					console.log(sem);
 
-					if (val == "1") {
-						var data1 = data['data1'];
-					}
-					if (val == "2") {
-						var data1 = data['data2'];
-					}
-					if (val == "3") {
-						var data1 = data['data3'];
-					}
-					if (val == "4") {
-						var data1 = data['data4'];
-					}
-					if (val == "5") {
-						var data1 = data['data5'];
-					}
-					if (val == "6") {
-						var data1 = data['data6'];
-					}
-					if (val == "7") {
-						var data1 = data['data7'];
-					}
-					if (val == "8") {
-						var data1 = data['data8'];
-					}
-					if (val == "9") {
-						var data1 = data['data9'];
-					}
-					if (val == "10") {
-						var data1 = data['data10'];
-					}
+                    var p1 = [], w1 = [], d1 =[], f1 = [];
+                    var p2 = [], w2 = [], d2 =[], f2 = [];
+                    var p3 = [], w3 = [], d3 =[], f3 = [];
+                    var p4 = [], w4 = [], d4 =[], f4 = [];
+                    var p5 = [], w5 = [], d5 =[], f5 = [];
+                    var p6 = [], w6 = [], d6 =[], f6 = [];
+					var p7 = [], w7 = [], d7 =[], f7 = [];
+					var p8 = [], w8 = [], d8 =[], f8 = [];
+					var p9 = [], w9 = [], d9 =[], f9 = [];
+					var p10 = [], w10 = [], d10 =[], f10 = [];
 
 					console.log(data1);
 
-					var one = [];
-					var two = [];
-					var three = [];
-					var four = [];
-					var one1 = [];
-					var two1 = [];
-					var three1 = [];
-					var four1 = [];
-					var one2 = [];
-					var two2 = [];
-					var three2 = [];
-					var four2 = [];
+                    //Use uppercase for the retriving data names
+                    for (var i in data1) {
+                        p1.push(data1[i].P1); 
+						w1.push(data1[i].W1);
+                        d1.push(data1[i].D1);
+                        f1.push(data1[i].F1);
+                        
+						p2.push(data1[i].P2);
+                        w2.push(data1[i].W2);
+                        d2.push(data1[i].D2);
+                        f2.push(data1[i].F2);
+						
+                        p3.push(data1[i].P3);
+                        w3.push(data1[i].W3);
+                        d3.push(data1[i].D3);
+                        f3.push(data1[i].F3);
+						
+						p4.push(data1[i].P4);
+                        w4.push(data1[i].W4);
+                        d4.push(data1[i].D4);
+                        f4.push(data1[i].F4);
+					
+						p5.push(data1[i].P5);
+                        w5.push(data1[i].W5);
+                        d5.push(data1[i].D5);
+                        f5.push(data1[i].F5);
+						
+						p6.push(data1[i].P6);
+                        w6.push(data1[i].W6);
+                        d6.push(data1[i].D6);
+                        f6.push(data1[i].F6);
+						
+						p7.push(data1[i].P7);
+                        w7.push(data1[i].W7);
+                        d7.push(data1[i].D7);
+                        f7.push(data1[i].F7);
+						
+						p8.push(data1[i].P8);
+                        w8.push(data1[i].W8);
+                        d8.push(data1[i].D8);
+                        f8.push(data1[i].F8);
+						
+						p9.push(data1[i].P9);
+                        w9.push(data1[i].W9);
+                        d9.push(data1[i].D9);
+                        f9.push(data1[i].F9);
+						
+						p10.push(data1[i].P10);
+                        w10.push(data1[i].W10);
+                        d10.push(data1[i].D10);
+                        f10.push(data1[i].F10);
+                    }
 
+                    var chartdata = {
+                        labels: ["0-10%", "10-20%", "20-30%", "30-40%",
+						"40-50%", "50-60%", "60-70%", "70-80%", "90-100%"],      
 
-					//Use uppercase for the retriving data names
-					for (var i in data1) {
-						one.push(data1[i].P1);
-						two.push(data1[i].W1);
-						three.push(data1[i].D1);
-						four.push(data1[i].F1);
-						one1.push(data1[i].P2);
-						two1.push(data1[i].W2);
-						three1.push(data1[i].D2);
-						four1.push(data1[i].F2);
-						one2.push(data1[i].P3);
-						two2.push(data1[i].W3);
-						three2.push(data1[i].D3);
-						four2.push(data1[i].F3);
-					}
+                        datasets: [
+                            {
+                                label: "Pass",
+                                hoverBackgroundColor: '#CCCCCC',
+                                hoverBorderColor: '#666666',
+                                data: [(p1*100), (p2* 100), (p3* 100),(p4* 100),
+								(p5* 100),(p6* 100),(p7* 100),(p8* 100),(p9* 100),
+								(p10* 100)],
+                                backgroundColor:["#00994C", "#00994C", "#00994C",
+								"#00994C","#00994C","#00994C","#00994C","#00994C",
+								"#00994C","#00994C"],
+								stack:1
+                            },
 
-					var chartdata = {
-						labels: ["2013J 35- 55", "2013J 35- 55", "2013J 55+"],
+                            {
+                                label: "Withdraw",
+                                hoverBackgroundColor: '#CCCCCC',
+                                hoverBorderColor: '#666666',
 
-						datasets: [{
-								label: "Pass",
-								hoverBackgroundColor: '#CCCCCC',
-								hoverBorderColor: '#666666',
-								data: [(one * 100), (one1 * 100), (one2 * 100)],
-								backgroundColor: ["Red", "Red", "Red"],
+                                data: [(w1*100), (w2* 100), (w3* 100),(w4* 100),
+								(w5* 100),(w6* 100),(w7* 100),(w8* 100),
+								(w9* 100),(w10* 1)],
+								backgroundColor:["#FF8000", "#FF8000", "#FF8000","#FF8000",
+								"#FF8000","#FF8000","#FF8000","#FF8000","#FF8000","#FF8000"],
+								
+								stack:1
+                            },
 
+                            {
+                                label: "Distinct",
+                                hoverBackgroundColor: '#CCCCCC',
+                                hoverBorderColor: '#666666',
 
+                                data: [(d1*100), (d2 *100), (d3 *100), (d4 *100),
+								(d5 *100),(d6 *100),(d7 *100),(d8 *100),(d9 *100), (d10 *100)],
+                                backgroundColor: ["#000099", "#000099", "#000099", 
+								"#000099", "#000099",
+								"#000099","#000099","#000099","#000099","#000099"],
+								stack:1
+                            },
+                            {
+                                label: "Fail",
+                                hoverBackgroundColor: '#CCCCCC',
+                                hoverBorderColor: '#666666',
+
+                                data: [(f1*100), (f2 *100), (f3 *100), (f4 *100),
+								(f5 *100), (f6 *100), (f7 *100), (f8 *100),
+								(f9 *100), (f10 *100)],
+                                backgroundColor: ["#990000", "#990000", "#990000", "#990000","#990000",
+								"#990000", "#990000","#990000","#990000","#990000"],	
+								stack:1
+                            },
+						
+						
+                        ]
+                    };
+
+                    // var options = {
+                    //     scales: {
+                    //         yAxes: [{
+                    //             ticks: {
+                    //                 fontSize: 80
+                    //             }
+                    //         }]
+                    //     }
+                    // }
+
+                    var graphTarget = $("#graphCanvas");
+
+                   var barGraph = new Chart(graphTarget, {
+                        type: 'horizontalBar',
+                        data: chartdata,
+						options: {
+							title: {
+							display: true,
+							text: 'IMD Band Chart'
 							},
-
-							{
-								label: "Withdraw",
-								hoverBackgroundColor: '#CCCCCC',
-								hoverBorderColor: '#666666',
-								data: [(two * 100), (two1 * 100), (two2 * 100)],
-								backgroundColor: ["Yellow", "Yellow", "Yellow"],
-
-							},
-
-							{
-								label: "Distinct",
-								hoverBackgroundColor: '#CCCCCC',
-								hoverBorderColor: '#666666',
-								data: [(three * 100), (three1 * 100), (three2 * 100)],
-								backgroundColor: ["Blue", "Blue", "Blue"],
-
-							},
-
-							{
-								label: "Fail",
-								hoverBackgroundColor: '#CCCCCC',
-								hoverBorderColor: '#666666',
-								data: [(four * 100), (four1 * 100), (four2 * 100)],
-								backgroundColor: ["Green", "Green", "Green"],
-
-							},
-
-						]
-					};
-
-					// var options = {
-					//     scales: {
-					//         yAxes: [{
-					//             ticks: {
-					//                 fontSize: 80
-					//             }
-					//         }]
-					//     }
-					// }
-
-					var graphTarget = $("#graphCanvas");
-
-					var barGraph = new Chart(graphTarget, {
-							type: 'horizontalBar',
-							data: chartdata
+							
+							
+							plugins: {
+							stacked100: { enable: true },
+							}
 						}
+                    })
+			
+          
+	   
 
-					)
-
-				}
-			);
-
-
-		};
-	</script>
+            };
+        </script>
 
 </body>
-
 </html>
