@@ -174,11 +174,3 @@ $statement10 = oci_parse($connection, 'SELECT
   oci_free_statement($statement8);
   oci_free_statement($statement9);
   oci_free_statement($statement10);
-
-
-
-
-?>
-
-
-
