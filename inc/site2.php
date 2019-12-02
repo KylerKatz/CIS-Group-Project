@@ -26,28 +26,50 @@ BODY {
 
 
 
-<div id="chart-container" style = "background-color: white;">
+<div id="chart-container">
 		<canvas id="graphCanvas"></canvas>
 		
 		<form  id="userform" >
 		<input type = "text" id= "sem" placeholder = "Semester" required/>
 		<button type='submit' id="submit" value='Submit' >Submit</button>
-
 		</form>
+		
+		<button id="button1" name="action">Show all</button>
+
 		
  </div>
  <div id='response'></div>
 
     <script>
 		
-	   var id = "";
 	   $(document).ready(function () {	
-
-		$('#submit').click( function(event) {
+		
+		$('#button1').on('click', function(event) {
+			var sem = 'all';
 			event.preventDefault();
 			
-			var sem = $('#sem').val();
+			console.log(sem);
+			$.ajax({
+			type : 'POST',  //type of method
+			url: 'index2.php',
+			dataType: 'json',
+			data: {sem: sem},
+			success: function(data){
+				if(data.code =='200'){
+				sem = data.msg;
+				
+				}
+				console.log(sem);
+				showGraph(sem);
 
+			},
+				
+            });
+			});
+		$('#submit').click( function(event) {
+			
+			var sem = $('#sem').val();
+			event.preventDefault();
 			$.ajax({
             type : 'POST',  //type of method
 			url: 'index2.php',
@@ -148,9 +170,22 @@ BODY {
 
                     var chartdata = {
                         labels: ["0-10%", "10-20%", "20-30%", "30-40%",
-						"40-50%", "50-60%", "60-70%", "70-80%", "90-100%"],      
+						"40-50%", "50-60%", "60-70%", "70-80%", "80-90%", "90-100%"],      
 
                         datasets: [
+						
+							{
+                                label: "Distinct",
+                                hoverBackgroundColor: '#CCCCCC',
+                                hoverBorderColor: '#666666',
+
+                                data: [(d1*100), (d2 *100), (d3 *100), (d4 *100),
+								(d5 *100),(d6 *100),(d7 *100),(d8 *100),(d9 *100), (d10 *100)],
+                                backgroundColor: ["#000099", "#000099", "#000099", 
+								"#000099", "#000099",
+								"#000099","#000099","#000099","#000099","#000099"],
+								stack:1
+                            },
                             {
                                 label: "Pass",
                                 hoverBackgroundColor: '#CCCCCC',
@@ -171,25 +206,14 @@ BODY {
 
                                 data: [(w1*100), (w2* 100), (w3* 100),(w4* 100),
 								(w5* 100),(w6* 100),(w7* 100),(w8* 100),
-								(w9* 100),(w10* 1)],
+								(w9* 100),(w10* 100)],
 								backgroundColor:["#FF8000", "#FF8000", "#FF8000","#FF8000",
 								"#FF8000","#FF8000","#FF8000","#FF8000","#FF8000","#FF8000"],
 								
 								stack:1
                             },
 
-                            {
-                                label: "Distinct",
-                                hoverBackgroundColor: '#CCCCCC',
-                                hoverBorderColor: '#666666',
-
-                                data: [(d1*100), (d2 *100), (d3 *100), (d4 *100),
-								(d5 *100),(d6 *100),(d7 *100),(d8 *100),(d9 *100), (d10 *100)],
-                                backgroundColor: ["#000099", "#000099", "#000099", 
-								"#000099", "#000099",
-								"#000099","#000099","#000099","#000099","#000099"],
-								stack:1
-                            },
+                           
                             {
                                 label: "Fail",
                                 hoverBackgroundColor: '#CCCCCC',
@@ -219,19 +243,49 @@ BODY {
 
                     var graphTarget = $("#graphCanvas");
 
-                   var barGraph = new Chart(graphTarget, {
+					if(window.bar != undefined)
+						window.bar.destroy();
+			
+					window.bar = new Chart(graphTarget, {
                         type: 'horizontalBar',
                         data: chartdata,
 						options: {
+							
 							title: {
 							display: true,
-							text: 'IMD Band Chart'
+							text: 'IMD Band Chart',
+							fontColor: "white",
+                            fontSize: 25
 							},
-							
-							
+							legend: {
+                                labels: {
+                                    fontColor: 'black',
+                                }
+							},
 							plugins: {
 							stacked100: { enable: true },
-							}
+							},
+							
+							 scales: {
+                                    xAxes: [{
+                                        ticks: {
+                                            fontColor: "black"
+                                        },
+                                        gridLines: {
+                                            color: "black"
+                                        }
+                                    }],
+                                    yAxes: [{
+                                        ticks: {
+                                            fontColor: "black"
+                                        },
+                                        gridLines: {
+                                            color: "black"
+                                        }
+
+
+                                    }],
+                                }
 						}
                     })
 			

@@ -3,7 +3,7 @@
 
 <head>
 
-  <title>Age Trends</title>
+  <title>IMD Band</title>
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
@@ -17,14 +17,31 @@
 
 <body>
 
-  <div id="Graph-text-left">
-    <p id="left-text"> Hello and welcome to the Open University Learning Trends website!
-      The purpose of this website is to offer teachers and faculty Insight into how metrics such as age, class demographics, and course interactions can affect student learning outcomes.
-      The data that these trends are based off is from the <a href="https://analyse.kmi.open.ac.uk/open_dataset" target="_blank"> Open University Learning Analytics dataset</a> which is data from an online school for student in the United Kingdom.
-      This is anonymized data from over thirty-thousand students across two years and four semesters.
-      We hope that you are able to take away newfound information that can be applied to your future teaching. </p>
-  </div>
+  <div id="Title-container">
+    <div clas="title">
+      <h2>IMD Band</h2>
 
+    </div>
+
+  </div>
+  <div id="Graph-text-left">
+    <p id="left-text">
+      <span style="font-size: 25px; color:white;   text-shadow: 2px 2px #000000;">Details: </span> <br>
+      The IMD Band Chart breaks each student down into their socio-economic group (IMD Band is the UK equivalent of income quintiles more commonly used in the US)
+	  and determines past performance by socio-economic status. The ten socio-economic groups are arranged on a scale from 0 to 100%, with 100% being the most well-off from
+	  a socio-economic standpoint. Students are deemed to have either passed, withdrawn, passed with distinction (honors), or failed each course.
+	  <br>
+      <br>
+      <span style="font-size: 25px; color:white;   text-shadow: 2px 2px #000000;">Importance and Applications:</span> <br>
+	  Crucial to understanding the positive societal impact that educational research can have, the chart can be used to determine how people of different socio-economic status were
+	  impacted by each of their courses. In order to make coursework at the introductory level better prepare students for upper level coursework, teachers can use this tool to
+	  determine whether their teaching decisions effected these different groups of people in a different or disproportionate manner. Knowing whether certain subjects, teachers, or
+	  classes increase the likelihood of passing for certain students who are at-risk of being unable to do so is among the most important work to be done in education.
+	  <br>
+      <br>
+     
+    </p>
+  </div>
 
 </body>
 
